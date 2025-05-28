@@ -58,3 +58,36 @@ var users = [
 ];
 console.log(pluck(users, "id")); // [1, 2]
 console.log(pluck(users, "name")); // ["Alice", "Bob"]
+function getButtonClass(style) {
+    switch (style) {
+        case "primary":
+            return "btn-".concat(style);
+        case "secondary":
+            return "btn-".concat(style);
+        case "danger":
+            return "btn-".concat(style);
+        default:
+            throw new Error("Invaild button style");
+    }
+}
+// 테스트 코드
+console.log(getButtonClass("primary")); // "btn-primary"
+console.log(getButtonClass("secondary")); // "btn-secondary"
+console.log(getButtonClass("danger")); // "btn-danger"
+function handleRequestState(state) {
+    switch (state) {
+        case "loading":
+            return "Loading, please wait...";
+        case "success":
+            return "Request successful!";
+        case "error":
+            return "There was an error processing your request.";
+        default:
+            throw new Error("Invaild request state");
+    }
+}
+// 테스트 코드
+console.log(handleRequestState("loading")); // "Loading, please wait..."
+console.log(handleRequestState("success")); // "Request successful!"
+console.log(handleRequestState("error")); // "There was an error processing your request."
+// console.log(handleRequestState("unknown")); // 오류 발생

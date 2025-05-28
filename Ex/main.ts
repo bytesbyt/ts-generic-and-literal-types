@@ -92,3 +92,51 @@ function pluck<T,K extends keyof T>(array: T[], key: K): T[K][] {
   
 console.log(pluck(users, "id")); // [1, 2]
 console.log(pluck(users, "name")); // ["Alice", "Bob"]
+
+// Literal Type
+
+// Exercise 1
+
+type ButtonStyle = "primary" | "secondary" | "danger";
+
+function getButtonClass(style: ButtonStyle): string {
+    switch (style) {
+        case "primary":
+            return `btn-${style}`;
+        case "secondary":
+            return `btn-${style}`;
+        case "danger":
+            return `btn-${style}`;
+        default:
+            throw new Error ("Invaild button style");
+    }  
+  }
+
+// 테스트 코드
+console.log(getButtonClass("primary")); // "btn-primary"
+console.log(getButtonClass("secondary")); // "btn-secondary"
+console.log(getButtonClass("danger")); // "btn-danger"
+// console.log(getButtonClass("unknown")); // 오류 발생
+
+// Exercise 2
+
+type DataRequest = "loading" | "success" | "error"
+
+function handleRequestState(state: DataRequest): string {
+    switch (state) {
+        case "loading":
+            return "Loading, please wait...";
+        case "success":
+            return "Request successful!";
+        case "error":
+            return "There was an error processing your request.";
+        default:
+            throw new Error ("Invaild request state");
+    }   
+}
+  
+// 테스트 코드
+console.log(handleRequestState("loading")); // "Loading, please wait..."
+console.log(handleRequestState("success")); // "Request successful!"
+console.log(handleRequestState("error")); // "There was an error processing your request."
+// console.log(handleRequestState("unknown")); // 오류 발생
