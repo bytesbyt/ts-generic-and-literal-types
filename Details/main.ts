@@ -1,4 +1,4 @@
-// generic types
+// generic type
 
 // define type
 type ArrayType = number[];
@@ -65,7 +65,7 @@ function getValue<T extends Length>(data:T){
 console.log(getValue("hello"));
 
 // use case 4
-// 1. conditional types
+// 1. conditional type
 
 type IsString<T> = T extends string ? true : false;
 
@@ -73,7 +73,7 @@ type result1 = IsString<string>; // true
 type result2 = IsString<number>; // false
 type result3 = IsString<"hello">; // true
 
-// 2. mapped types
+// 2. mapped type
 
 type Movie1 = {
     title: string;
@@ -87,7 +87,7 @@ type Subset <T> = {
 
 const movie1: Subset<Movie1> = {title: "Inception", year: 2010};
 
-// genric types (pairs)
+// genric type (pairs)
 
 interface Pair<T, U> {
     first: T;
@@ -105,7 +105,7 @@ const pair: Pair<string, number> = {
 pair.display(); // Output: One - 1
 
 
-// Liternal types
+// Literal type
 
 let direction : "left" | "right"
 direction = "left"
