@@ -28,14 +28,14 @@ console.log(isNumberArray([])); // true (빈 배열은 숫자 배열로 간주)
 // Exercise 3
 
 // 조건부 타입 정의
-type IsArray<T> = T extends Array<any> ? "This is an array." : "This is not an array.";
+type IsArray<T> = T extends Array<any> ? true : false;
 
 // 조건부 타입을 활용한 함수
-function checkArrayType<T>(value: T): IsArray<T> {
+function checkArrayType<T>(value: T): string {
     if (Array.isArray(value)) {
-        return "This is an array." as IsArray<T>;
+        return "This is an array.";
     } else {
-        return "This is not an array." as IsArray<T>;
+        return "This is not an array.";
     }
 }
 
